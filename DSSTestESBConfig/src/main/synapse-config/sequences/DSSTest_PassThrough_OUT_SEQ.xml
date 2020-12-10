@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="DSSTest_PassThrough_OUT_SEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+
+    <call-template description="Logging" target="conf:templates/sequences/shared/Logging.xml">
+        <with-param name="msg_status" value="Response Received"/>
+        <with-param name="transaction_id" value="{$ctx:TRANSACTION_ID}"/>
+        <with-param name="service_id" value="DSSTest"/>
+        <with-param name="operation_name" value="{$ctx:OPERATION_NAME}"/>
+        <with-param name="msg_direction" value="Incoming Response"/>
+        <with-param name="debug_ref" value="Response Received"/>
+        <with-param name="error_detail" value="-NA-"/>
+        <with-param name="sequence_name" value="DSSTest_PassThrough_OUT_SEQ"/>
+    </call-template>
+
+    <header action="remove" name="assertion" scope="transport"/>
+    <header action="remove" name="X-JWT-Assertion" scope="transport"/>
+    <call-template description="Logging" target="conf:templates/sequences/shared/Logging.xml">
+        <with-param name="msg_status" value="Returning response to consumer"/>
+        <with-param name="transaction_id" value="{$ctx:TRANSACTION_ID}"/>
+        <with-param name="service_id" value="DSSTest"/>
+        <with-param name="operation_name" value="{$ctx:OPERATION_NAME}"/>
+        <with-param name="msg_direction" value="Outgoing Response"/>
+        <with-param name="debug_ref" value="Returning response to consumer"/>
+        <with-param name="error_detail" value="-NA-"/>
+        <with-param name="sequence_name" value="DSSTest_PassThrough_OUT_SEQ"/>
+    </call-template>
+    <call-template description="Send" target="conf:/templates/sequences/shared/SendResponse.xml">
+        <with-param name="response_content_type" value="application/json"/>
+        <with-param name="transaction_id" value="{$ctx:TRANSACTION_ID}"/>
+        <with-param name="service_id" value="DSSTest"/>
+        <with-param name="operation_name" value="{$ctx:OPERATION_NAME}"/>
+    </call-template>
+
+</sequence>

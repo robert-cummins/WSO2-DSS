@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="f8cc451b-0cbd-400b-aee5-8e859e201baf"
+                    activeEnvironment="Default" name="ICMS_Project" resourceRoot="" soapui-version="5.3.0"
+                    abortOnError="false" runType="SEQUENTIAL">
+    <con:settings/>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService"
+                   id="de878f5d-83cd-45db-a08e-88626ce8975a" wadlVersion="http://wadl.dev.java.net/2009/02"
+                   name="http://mbie-dev-wso2.alabs.datacom.co.nz:8300" type="rest">
+        <con:settings/>
+        <con:definitionCache/>
+        <con:endpoints>
+            <con:endpoint>http://mbie-dev-wso2.alabs.datacom.co.nz:8300</con:endpoint>
+        </con:endpoints>
+        <con:resource name="Identities" path="/services/v1/edw/immigration/identities"
+                      id="ec3f8b77-ce0e-443f-8cff-fbb3c8bdc51e">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>last-name</con:name>
+                    <con:value>111</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>111</con:default>
+                    <con:path xsi:nil="true"/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Identities" id="4e78953b-2afc-431c-8b41-3dcae5a28ba7" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://mbie-dev-wso2.alabs.datacom.co.nz/services/identities/11">
+                        ns:Response
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>202</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>202</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>202</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>202</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>202</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>404</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://mbie-dev-wso2.alabs.datacom.co.nz/services/identities/11">ns:Fault
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="7c47d8fc-fc5b-4dfd-8953-2c9fecf0db97" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                            &lt;xml-fragment/&gt;
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>https://sit-esb-int.intnp.wd.govt.nz:8443</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://mbie-dev-wso2.alabs.datacom.co.nz/services/identities/11</con:originalUri>
+                    <con:credentials>
+                        <con:username>admin</con:username>
+                        <con:password>admin2</con:password>
+                        <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+                        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+                        <con:authType>Global HTTP Settings</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry xmlns="http://eviware.com/soapui/config" key="last-name" value=" d"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>last-name</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="IdentitiesByIdentityID" path="/services/v1/edw/immigration/identities/{identity-id}"
+                      id="7930574e-48c7-45a5-9c34-7848dfcee564">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>identity-id</con:name>
+                    <con:value>identity-id</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>identity-id</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="IdentitiesByIdentityID" id="32126e44-8059-4eb9-9558-7d036da0ac3b" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>404 500</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:iden="http://sit-esb-int.intnp.wd.govt.nz/services/v1/edw/immigration/identities/identity-id">
+                        iden:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                </con:representation>
+                <con:request name="Request 1" id="122d3951-597b-4f76-840c-81f09bdc6e90" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                            &lt;xml-fragment/&gt;
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>https://sit-esb-int.intnp.wd.govt.nz:8443</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>
+                        http://sit-esb-int.intnp.wd.govt.nz/services/v1/edw/immigration/identities/identity-id
+                    </con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry xmlns="http://eviware.com/soapui/config" key="identity-id" value="1"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>identity-id</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="GetEmployers" path="/services/v1/edw/immigration/employers"
+                      id="68c7dffb-82f6-4257-b31a-6f7c2f2693a7">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>identity-id</con:name>
+                    <con:value>111</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>111</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>client-id</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>organisation-name</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>exact-match</con:name>
+                    <con:value/>
+                    <con:style>QUERY</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="GetEmployers" id="c69d1f12-defb-45df-9995-37b84738f760" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>500 400</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:emp="http://mbie-dev-wso2.alabs.datacom.co.nz/services/v1/edw/immigration/employers">
+                        emp:Fault
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="f7933139-21a1-4bdf-b99b-bb8b9af277e9" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                            &lt;xml-fragment/&gt;
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>https://sit-esb-int.intnp.wd.govt.nz:8443</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://mbie-dev-wso2.alabs.datacom.co.nz/services/v1/edw/immigration/employers
+                    </con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="organisation-name" value="Datacom"/>
+                        <con:entry key="client-id" value="11"/>
+                        <con:entry key="exact-match" value="1"/>
+                        <con:entry key="identity-id" value="1111"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>identity-id</con:entry>
+                        <con:entry>client-id</con:entry>
+                        <con:entry>organisation-name</con:entry>
+                        <con:entry>exact-match</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="EmployeesByEmployerIdentityID"
+                      path="/services/v1/edw/immigration/employees-by-employer/{client-id}"
+                      id="7bf5675a-81db-44ff-8ac8-0c877eec6a93">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>client-id</con:name>
+                    <con:value>identity-id</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>identity-id</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>employed-from</con:name>
+                    <con:value>11</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>11</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>employed-to</con:name>
+                    <con:value>22</con:value>
+                    <con:style>QUERY</con:style>
+                    <con:default>22</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="EmployeesByEmployerIdentityID" id="2f8f3d23-f0e5-4a0a-8331-ecdb819958ae" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>202</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>202</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:iden="http://mbie-dev-wso2.alabs.datacom.co.nz/services/employees-by-employer/identity-id">
+                        iden:Response
+                    </con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+                    <con:status>500 400</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:iden="http://mbie-dev-wso2.alabs.datacom.co.nz/services/employees-by-employer/identity-id">
+                        iden:Fault
+                    </con:element>
+                </con:representation>
+                <con:request name="Request 1" id="df56e479-f58e-4c0e-997d-540180c37f2e" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                            &lt;xml-fragment/&gt;
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>https://sit-esb-int.intnp.wd.govt.nz:8443</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>
+                        http://mbie-dev-wso2.alabs.datacom.co.nz/services/employees-by-employer/identity-id
+                    </con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="employed-to" value="06 Jun 2017"/>
+                        <con:entry key="client-id" value="111"/>
+                        <con:entry key="employed-from" value="06 Jun 2017"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>employed-from</con:entry>
+                        <con:entry>employed-to</con:entry>
+                        <con:entry>client-id</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+    <con:sensitiveInformation/>
+</con:soapui-project>

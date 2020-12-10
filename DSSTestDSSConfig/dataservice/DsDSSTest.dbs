@@ -1,0 +1,9 @@
+<data name="DsDummy" serviceNamespace="http://data.business.govt.nz" serviceGroup="nz.govt.mbie.Dummy">
+    <description/>
+    <config id="Dummy_DB">
+        <property name="org.wso2.ws.dataservice.user">null</property>
+        <property name="org.wso2.ws.dataservice.password">null</property>
+        <property name="org.wso2.ws.dataservice.protocol">null</property>
+        <property name="org.wso2.ws.dataservice.driver">null</property>
+    </config>
+</data>
