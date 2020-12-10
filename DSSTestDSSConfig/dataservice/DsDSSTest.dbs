@@ -1,9 +1,20 @@
-<data name="DsDummy" serviceNamespace="http://data.business.govt.nz" serviceGroup="nz.govt.mbie.Dummy">
+<data name="DsDSSTest" serviceNamespace="http://ws.wso2.org/dataservice">
     <description/>
-    <config id="Dummy_DB">
-        <property name="org.wso2.ws.dataservice.user">null</property>
-        <property name="org.wso2.ws.dataservice.password">null</property>
-        <property name="org.wso2.ws.dataservice.protocol">null</property>
-        <property name="org.wso2.ws.dataservice.driver">null</property>
+    <config id="DsDSSTest">
+        <property name="carbon_datasource_name">TEST_DATABASE</property>
     </config>
+    <query id="dsGetPeople" useConfig="DsDSSTest">
+        <sql>
+            SELECT * FROM test_database.people
+        </sql>
+        <result element="getPeopleResponse" rowName="personDetails">
+            <element column="Name" name="Name" xsdType="string"/>
+            <element column="Age" name="Age" xsdType="int"/>
+            <element column="Nationality" name="Nationality" xsdType="string"/>
+        </result>
+    </query>
+
+    <operation name="getPeople">
+        <call-query href="dsGetPeople"/>
+    </operation>
 </data>
