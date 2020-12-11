@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/services/sharedservices/dummy/v1" name="DSSTest_API" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="POST" uri-template="/changeme"
-              protocol="https" outSequence="DSSTest_PassThrough_OUT_SEQ" faultSequence="DSSTest_Generic_FAULT_SEQ">
+<api context="/testDSS" name="DSSTest_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/people">
         <inSequence>
-            <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')"/>
-            <property name="OPERATION_NAME" type="STRING" value="Change my value"/>
+            <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
+            <property name="OPERATION_NAME" type="STRING" value="################get Discovery Data############" scope="default"/>
             <sequence key="DSSTest_THROTTLE_SEQ"/>
             <sequence key="DSSTest_PassThrough_IN_SEQ"/>
+            <sequence key="DSSTest_PassThrough_OUT_SEQ"/>
         </inSequence>
-    </resource>
+        <faultSequence>
+			<sequence key="DSSTest_Generic_FAULT_SEQ"/>
+		</faultSequence>
 
-    <resource methods="GET" uri-template="/getversion"
-              protocol="https" inSequence="DSSTest_GetVersion_IN_SEQ" faultSequence="DSSTest_Generic_FAULT_SEQ">
-        <outSequence/>
     </resource>
-
-    <resource methods="POST PATCH GET OPTIONS DELETE HEAD PUT" inSequence="DSSTest_Default_IN_SEQ"
-              faultSequence="DSSTest_Generic_FAULT_SEQ"/>
 </api>

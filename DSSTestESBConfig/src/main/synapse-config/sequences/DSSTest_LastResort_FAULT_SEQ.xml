@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<sequence name="DSSTest_LastResort_FAULT_SEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-
-    <property value="500" name="HTTP_SC" scope="axis2" type="INTEGER"/>
-    <respond/>
-    <drop/>
-
-</sequence>
-
