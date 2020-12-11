@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+    <item>
+        <file>DSSTest_THROTTLE.xml</file>
+        <path>/_system/config/esb/policies/DSSTest</path>
+        <mediaType>application/wspolicy+xml</mediaType>
+    </item>
+</resources>

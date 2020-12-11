@@ -13,17 +13,16 @@
     <name>DSSTestESBConfig_CAPP</name>
     <description>DSSTestESBConfig_CAPP</description>
     <properties>
-        <nz.govt.mbie.Dummy.template_._Dummy_ErrorResponse_TEMP>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.template_._Dummy_ErrorResponse_TEMP>
-        <nz.govt.mbie.Dummy.api_._Dummy_API>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.api_._Dummy_API>
-        <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,lib/registry/handlers=jar,service/rule=aar,lib/registry/filter=jar,synapse/message-store=xml,event/stream=json,service/meta=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,synapse/api=xml,wso2/gadget=dar,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
-        <nz.govt.mbie.Dummy.sequence_._Dummy_PassThrough_OUT_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.sequence_._Dummy_PassThrough_OUT_SEQ>
-        <nz.govt.mbie.Dummy.sequence_._Dummy_LastResort_FAULT_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.sequence_._Dummy_LastResort_FAULT_SEQ>
-        <nz.govt.mbie.Dummy.sequence_._Dummy_PassThrough_IN_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.sequence_._Dummy_PassThrough_IN_SEQ>
-        <nz.govt.mbie.Dummy.sequence_._Dummy_Generic_FAULT_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.sequence_._Dummy_Generic_FAULT_SEQ>
-        <nz.govt.mbie.Dummy.sequence_._Dummy_GetVersion_IN_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.sequence_._Dummy_GetVersion_IN_SEQ>
-        <nz.govt.mbie.Dummy.sequence_._Dummy_THROTTLE_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.sequence_._Dummy_THROTTLE_SEQ>
-        <nz.govt.mbie.Dummy.local-entry_._Dummy_Version_LE>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.local-entry_._Dummy_Version_LE>
-        <nz.govt.mbie.Dummy.sequence_._Dummy_Default_IN_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.Dummy.sequence_._Dummy_Default_IN_SEQ>
+        
+		<nz.govt.mbie.DSSTest.sequence_._DSSTest_PassThrough_IN_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.DSSTest.sequence_._DSSTest_PassThrough_IN_SEQ>
+		<nz.govt.mbie.DSSTest.sequence_._DSSTest_PassThrough_OUT_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.DSSTest.sequence_._DSSTest_PassThrough_OUT_SEQ>
+		<nz.govt.mbie.DSSTest.local-entry_._DSSTest_Version_LE>capp/EnterpriseServiceBus</nz.govt.mbie.DSSTest.local-entry_._DSSTest_Version_LE>
+		<nz.govt.mbie.DSSTest.api_._DSSTest_API>capp/EnterpriseServiceBus</nz.govt.mbie.DSSTest.api_._DSSTest_API>
+		<nz.govt.mbie.DSSTest.sequence_._DSSTest_Generic_FAULT_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.DSSTest.sequence_._DSSTest_Generic_FAULT_SEQ>
+		<artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
+		<nz.govt.mbie.DSSTest.template_._DSSTest_ErrorResponse_TEMP>capp/EnterpriseServiceBus</nz.govt.mbie.DSSTest.template_._DSSTest_ErrorResponse_TEMP>
+		<nz.govt.mbie.DSSTest.sequence_._DSSTest_THROTTLE_SEQ>capp/EnterpriseServiceBus</nz.govt.mbie.DSSTest.sequence_._DSSTest_THROTTLE_SEQ>
+        
     </properties>
     <dependencies>
         <dependency>
@@ -38,30 +37,15 @@
             <version>1.0.0</version>
             <type>xml</type>
         </dependency>
-        <dependency>
-            <groupId>nz.govt.mbie.DSSTest.sequence</groupId>
-            <artifactId>DSSTest_Default_IN_SEQ</artifactId>
-            <version>1.0.0</version>
-            <type>xml</type>
-        </dependency>
+        
         <dependency>
             <groupId>nz.govt.mbie.DSSTest.sequence</groupId>
             <artifactId>DSSTest_Generic_FAULT_SEQ</artifactId>
             <version>1.0.0</version>
             <type>xml</type>
         </dependency>
-        <dependency>
-            <groupId>nz.govt.mbie.DSSTest.sequence</groupId>
-            <artifactId>DSSTest_GetVersion_IN_SEQ</artifactId>
-            <version>1.0.0</version>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>nz.govt.mbie.DSSTest.sequence</groupId>
-            <artifactId>DSSTest_LastResort_FAULT_SEQ</artifactId>
-            <version>1.0.0</version>
-            <type>xml</type>
-        </dependency>
+        
+        
         <dependency>
             <groupId>nz.govt.mbie.DSSTest.sequence</groupId>
             <artifactId>DSSTest_PassThrough_IN_SEQ</artifactId>

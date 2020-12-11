@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nz.govt.mbie.DSSTest</groupId>
+  <artifactId>DSSTestRegistryResources_module</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>DSSTestRegistryResources_module</name>
+  <description>DSSTestRegistryResources_module</description>
+  <modules>
+    <module>artifacts\resource\DSSTest_THROTTLE_DEV</module>
+    <module>artifacts\resource\DSSTest_THROTTLE_EAT</module>
+    <module>artifacts\resource\DSSTest_THROTTLE_PROD</module>
+    <module>artifacts\resource\DSSTest_THROTTLE_SAND</module>
+    <module>artifacts\resource\DSSTest_THROTTLE_SIT</module>
+    <module>artifacts\resource\DSSTest_Test_Transformation_XSLT</module>
+    <module>artifacts\resource\DSSTest_Test_EP_DEV</module>
+    <module>artifacts\resource\DSSTest_Test_EP_EAT</module>
+    <module>artifacts\resource\DSSTest_Test_EP_PROD</module>
+    <module>artifacts\resource\DSSTest_Test_EP_SAND</module>
+    <module>artifacts\resource\DSSTest_Test_EP_SIT</module>
+  </modules>
+</project>

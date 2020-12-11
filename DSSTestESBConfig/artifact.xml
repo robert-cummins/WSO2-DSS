@@ -4,10 +4,7 @@
               serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/DSSTest_API.xml</file>
     </artifact>
-    <artifact name="DSSTest_Default_IN_SEQ" groupId="nz.govt.mbie.DSSTest.sequence" version="1.0.0" type="synapse/sequence"
-              serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/sequences/DSSTest_Default_IN_SEQ.xml</file>
-    </artifact>
+    
     <artifact name="DSSTest_THROTTLE_SEQ" groupId="nz.govt.mbie.DSSTest.sequence" version="1.0.0" type="synapse/sequence"
               serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/DSSTest_THROTTLE_SEQ.xml</file>
@@ -28,16 +25,10 @@
               type="synapse/local-entry" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/local-entries/DSSTest_Version_LE.xml</file>
     </artifact>
-    <artifact name="DSSTest_GetVersion_IN_SEQ" groupId="nz.govt.mbie.DSSTest.sequence" version="1.0.0"
-              type="synapse/sequence" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/sequences/DSSTest_GetVersion_IN_SEQ.xml</file>
-    </artifact>
+    
     <artifact name="DSSTest_ErrorResponse_TEMP" groupId="nz.govt.mbie.DSSTest.template" version="1.0.0"
               type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/templates/DSSTest_ErrorResponse_TEMP.xml</file>
     </artifact>
-    <artifact name="DSSTest_LastResort_FAULT_SEQ" groupId="nz.govt.mbie.DSSTest.sequence" version="1.0.0"
-              type="synapse/sequence" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/sequences/DSSTest_LastResort_FAULT_SEQ.xml</file>
-    </artifact>
+    
 </artifacts>

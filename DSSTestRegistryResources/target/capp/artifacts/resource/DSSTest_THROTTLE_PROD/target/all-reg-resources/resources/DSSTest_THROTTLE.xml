@@ -1,0 +1,18 @@
+<wsp:Policy wsu:Id="DSSTest_THROTTLE"
+            xmlns:throttle="http://www.wso2.org/products/wso2commons/throttle"
+            xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+            xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <throttle:MediatorThrottleAssertion>
+        <wsp:Policy>
+            <throttle:ID throttle:type="IP">other</throttle:ID>
+            <wsp:Policy>
+                <throttle:Control>
+                    <wsp:Policy>
+                        <throttle:MaximumCount>1000</throttle:MaximumCount>
+                        <throttle:UnitTime>60000</throttle:UnitTime>
+                    </wsp:Policy>
+                </throttle:Control>
+            </wsp:Policy>
+        </wsp:Policy>
+    </throttle:MediatorThrottleAssertion>
+</wsp:Policy>

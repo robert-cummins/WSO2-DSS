@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nz.govt.mbie.DSSTest</groupId>
+  <artifactId>DSSTestESBConfig_module</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>DSSTestESBConfig_module</name>
+  <description>DSSTestESBConfig_module</description>
+  <modules>
+    <module>artifacts\api\DSSTest_API</module>
+    <module>artifacts\sequence\DSSTest_THROTTLE_SEQ</module>
+    <module>artifacts\sequence\DSSTest_PassThrough_IN_SEQ</module>
+    <module>artifacts\sequence\DSSTest_Generic_FAULT_SEQ</module>
+    <module>artifacts\sequence\DSSTest_PassThrough_OUT_SEQ</module>
+    <module>artifacts\local-entry\DSSTest_Version_LE</module>
+    <module>artifacts\template\DSSTest_ErrorResponse_TEMP</module>
+  </modules>
+</project>

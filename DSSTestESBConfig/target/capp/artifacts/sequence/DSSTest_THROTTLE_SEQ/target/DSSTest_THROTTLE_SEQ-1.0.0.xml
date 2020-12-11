@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="DSSTest_THROTTLE_SEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+
+
+    <throttle id="DSSTest_API_THROTTLE">
+        <policy key="conf:/policies/DSSTest/DSSTest_THROTTLE.xml"/>
+        <onReject>
+            <log>
+                <property name="DSSTest_Throttling_Check" value="*** Throttling applied - Denied ***"/>
+            </log>
+            <property description="Set MSG_STATUS" name="MSG_STATUS" scope="default" type="STRING"
+                      value="Access Denied"/>
+            <property description="Set DEBUG_REF" name="DEBUG_REF" scope="default" type="STRING"
+                      value="Throttling_Check_Failed"/>
+            <property description="Set MSG_DIRECTION" name="MSG_DIRECTION" scope="default" type="STRING"
+                      value="** Outgoing : DSSTest_THROTTLE_SEQ"/>
+            <property description="Set ERROR_DETAIL"
+                      expression="concat('Throttling applied - Access Denied for message id : [', $ctx:TRANSACTION_ID, '] | Server Name : ', get-property('SERVER_IP'), ' | ')"
+                      name="ERROR_DETAIL" scope="default" type="STRING"/>
+            <property name="ERROR_CODE" scope="default" type="STRING" value="ThrottledDenied"/>
+            <property
+                    expression="concat('Throttling applied - Access Denied for message id : [', $ctx:TRANSACTION_ID, '] | Server Name : ', get-property('SERVER_IP'), ' | ')"
+                    name="ERROR_MESSAGE" scope="default" type="STRING"/>
+            <sequence key="DSSTest_Generic_FAULT_SEQ"/>
+            <drop/>
+        </onReject>
+        <onAccept>
+            <log>
+                <property name="DSSTest_Throttling_Check" value="*** Throttling applied - Accept ***"/>
+            </log>
+            <property description="Set DEBUG_REF" name="DEBUG_REF" scope="default" type="STRING"
+                      value="Throttling_Check_Passed"/>
+        </onAccept>
+    </throttle>
+
+
+</sequence>

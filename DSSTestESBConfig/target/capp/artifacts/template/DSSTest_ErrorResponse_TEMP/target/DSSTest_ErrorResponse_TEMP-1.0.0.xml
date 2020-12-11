@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="DSSTest_ErrorResponse_TEMP" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="status"/>
+    <parameter name="errorMessage"/>
+    <parameter name="errorDescription"/>
+    <sequence onError="DSSTest_LastResort_FAULT_SEQ">
+        <payloadFactory media-type="json">
+            <format>{"status": "$1","errorMessage": "$2","errorDescription": "$3"}</format>
+            <args>
+                <arg evaluator="xml" expression="$func:status"/>
+                <arg evaluator="xml" expression="$func:errorMessage"/>
+                <arg evaluator="xml" expression="$func:errorDescription"/>
+            </args>
+        </payloadFactory>
+        <property expression="$func:status" name="HTTP_SC" scope="axis2" type="INTEGER"/>
+        <respond/>
+        <drop/>
+    </sequence>
+</template>
