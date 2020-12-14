@@ -1,11 +1,4 @@
-<endpoint xmlns="http://ws.apache.org/ns/synapse" name="DSSTest_Test_EP">
-    <address uri="https://localhost">
-        <suspendOnFailure>
-            <progressionFactor>1.0</progressionFactor>
-        </suspendOnFailure>
-        <markForSuspension>
-            <retriesBeforeSuspension>0</retriesBeforeSuspension>
-            <retryDelay>0</retryDelay>
-        </markForSuspension>
-    </address>
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="IPONZv4_DSS_EP" xmlns="http://ws.apache.org/ns/synapse">
+	<address format="soap11" trace="disable" uri="http://bps.esb2.mbiedev:9763/services/DsDSSTest/"/>
 </endpoint>
