@@ -18,8 +18,7 @@
             <log level="full">
                 <property name="######################### get people" value="I AM HERE"></property>
             </log>
-            <property name="messageType" scope="axis2" type="STRING" value="application/xml"/>
-            <property action="remove" name="Content-Encoding" scope="transport"/>
+            
             <send>
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>
