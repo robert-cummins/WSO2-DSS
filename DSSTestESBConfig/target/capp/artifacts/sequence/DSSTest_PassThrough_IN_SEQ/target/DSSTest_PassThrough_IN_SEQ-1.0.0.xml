@@ -12,21 +12,15 @@
         <with-param name="sequence_name" value="DSSTest_PassThrough_IN_SEQ"/>
     </call-template>
 
-    <call-template description="Logging" target="conf:templates/sequences/shared/Logging.xml">
-        <with-param name="msg_status" value="Sending to back-end service endpoint"/>
-        <with-param name="transaction_id" value="{$ctx:TRANSACTION_ID}"/>
-        <with-param name="service_id" value="DSSTest"/>
-        <with-param name="operation_name" value="{$ctx:OPERATION_NAME}"/>
-        <with-param name="msg_direction" value="Outgoing"/>
-        <with-param name="debug_ref" value="Sending to back-end service endpoint"/>
-        <with-param name="error_detail" value="-NA-"/>
-        <with-param name="sequence_name" value="DSSTest_PassThrough_IN_SEQ"/>
-    </call-template>
-
-
-    <send>
-        <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
-    </send>
-
-
+    <switch source="$ctx:OPERATION_NAME">
+        <case regex="getPeople">
+            <header name="Action" scope="default" value="urn:getPeople"/>
+            <log level="full">
+                <property name="######################### get people" value="I AM HERE"></property>
+            </log>
+            <send>
+                <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
+            </send>
+        </case>
+    </switch>
 </sequence>

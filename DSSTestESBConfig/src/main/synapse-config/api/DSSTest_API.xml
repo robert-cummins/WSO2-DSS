@@ -3,7 +3,7 @@
     <resource methods="GET" uri-template="/people*">
         <inSequence>
             <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
-            <property name="OPERATION_NAME" type="STRING" value="################get Discovery Data############" scope="default"/>
+            <property name="OPERATION_NAME" type="STRING" value="getPeople" scope="default"/>
             <sequence key="DSSTest_THROTTLE_SEQ"/>
             <sequence key="DSSTest_PassThrough_IN_SEQ"/>
         </inSequence>
