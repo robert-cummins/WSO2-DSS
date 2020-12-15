@@ -18,6 +18,21 @@
             <log level="full">
                 <property name="######################### get people" value="I AM HERE"></property>
             </log>
+            <payloadFactory media-type="xml">
+				<format>
+					<dat:getPeople xmlns:dat="http://ws.wso2.org/dataservice">
+						<dat:Name>$1</dat:Name>
+						<dat:Age>$2</dat:Age>
+						<dat:Nationality>$3</dat:Nationality>
+					</dat:getPeople>
+				</format>
+				<args>
+					<arg evaluator="xml" expression="get-property(query.param.Name)"/>
+					<arg evaluator="xml" expression="get-property(query.param.Age)"/>
+					<arg evaluator="xml" expression="get-property(query.param.Nationality)"/>
+				</args>
+			</payloadFactory>
+
             <send>
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>
