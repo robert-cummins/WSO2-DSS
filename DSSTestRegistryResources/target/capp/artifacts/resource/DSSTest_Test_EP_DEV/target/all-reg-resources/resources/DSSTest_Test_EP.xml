@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<endpoint name="IPONZv4_DSS_EP" xmlns="http://ws.apache.org/ns/synapse">
-	<address format="soap11" trace="disable" uri="http://bps.esb2.mbiedev:9763/services/DsDSSTest/"/>
+<endpoint name="DSSTest_Test_EP" xmlns="http://ws.apache.org/ns/synapse">
+	<address format="get" trace="disable" uri="http://bps.esb2.mbiedev:9763/services/DsDSSTest/"/>
 </endpoint>
