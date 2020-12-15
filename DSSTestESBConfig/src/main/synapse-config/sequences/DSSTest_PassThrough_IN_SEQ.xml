@@ -12,6 +12,7 @@
         <with-param name="sequence_name" value="DSSTest_PassThrough_IN_SEQ"/>
     </call-template>
     <property action="remove" name="Accept" scope="transport"/>
+    <property name="ContentType" value="text/xml" scope="axis2"/>
     <switch source="$ctx:OPERATION_NAME">
         <case regex="getPeople">
             <header name="Action" scope="default" value="urn:getPeople"/>
