@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="DSSTest_Test_EP" xmlns="http://ws.apache.org/ns/synapse">
-	<address format="get" trace="disable" uri="http://bps:8443/services/DsDSSTest/"/>
+	<address format="soap11" trace="disable" uri="http://bps:8443/services/DsDSSTest/"/>
+
 </endpoint>
+
