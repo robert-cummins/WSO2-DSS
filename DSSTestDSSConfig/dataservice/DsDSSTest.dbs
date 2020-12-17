@@ -27,8 +27,23 @@
         </result>
     </query>
 
+    <query id="dsGetPersonByID" useConfig="DsDSSTest">
+        <sql>
+            SELECT * FROM test_database.people WHERE idpeople=:id
+        </sql>
+        <result element="getPersonResponse" rowName="personDetails">
+            <element column="Name" name="Name" xsdType="string"/>
+            <element column="Age" name="Age" xsdType="int"/>
+            <element column="Nationality" name="Nationality" xsdType="string"/>
+        </result>
+    </query>
+
     <operation name="getPeople">
         <call-query href="dsGetPeople"/>
+    </operation>
+
+    <operation name="getPersonPersonByID">
+        <call-query href="dsGetPersonByID"/>
     </operation>
 
     <operation name="getCars">

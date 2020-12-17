@@ -28,5 +28,15 @@
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>
         </case>
+
+        <case regex="getPersonByID">
+            <header name="Action" scope="default" value="urn:getPersonByID"/>
+            <log level="full">
+                <property name="############################################ ID" expression="get-property('uri.var.id')"/>
+            </log>
+            <send>
+                <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
+            </send>
+        </case>
     </switch>
 </sequence>

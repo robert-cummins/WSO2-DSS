@@ -13,9 +13,27 @@
     </call-template>
     <property action="remove" name="Accept" scope="transport"/>
     <property name="ContentType" value="application/xml" scope="axis2"/>
+    
     <switch source="$ctx:OPERATION_NAME">
         <case regex="getPeople">
             <header name="Action" scope="default" value="urn:getPeople"/>
+            <send>
+                <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
+            </send>
+        </case>
+
+        <case regex="getCars">
+            <header name="Action" scope="default" value="urn:getCars"/>
+            <send>
+                <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
+            </send>
+        </case>
+
+        <case regex="getPersonByID">
+            <header name="Action" scope="default" value="urn:getPersonByID"/>
+            <log level="full">
+                <property name="############################################ ID" expression="get-property('uri.var.id')"/>
+            </log>
             <send>
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>

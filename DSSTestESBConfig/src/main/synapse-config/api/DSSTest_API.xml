@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/DSSTest" name="DSSTest_API" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="GET" uri-template="/people*">
+    <resource methods="GET" uri-template="/people">
         <inSequence>
             <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
             <property name="OPERATION_NAME" type="STRING" value="getPeople" scope="default"/>
+            <sequence key="DSSTest_THROTTLE_SEQ"/>
+            <sequence key="DSSTest_PassThrough_IN_SEQ"/>
+        </inSequence>
+
+        <outSequence>
+			<sequence key="DSSTest_PassThrough_OUT_SEQ"/>
+		</outSequence>
+
+        <faultSequence>
+			<sequence key="DSSTest_Generic_FAULT_SEQ"/>
+		</faultSequence>
+    </resource>
+
+    <resource methods="GET" uri-template="/people/{id}">
+        <inSequence>
+            <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
+            <property name="OPERATION_NAME" type="STRING" value="getPersonByID" scope="default"/>
             <sequence key="DSSTest_THROTTLE_SEQ"/>
             <sequence key="DSSTest_PassThrough_IN_SEQ"/>
         </inSequence>
