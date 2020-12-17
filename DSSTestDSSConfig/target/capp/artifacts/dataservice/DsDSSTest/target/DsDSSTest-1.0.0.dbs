@@ -1,4 +1,5 @@
 <data name="DsDSSTest" serviceNamespace="http://ws.wso2.org/dataservice">
+    <log><property name="##############################" value="DBS file"></property></log>
     <description/>
     <config id="DsDSSTest">
         <property name="carbon_datasource_name">TEST_DATABASE</property>

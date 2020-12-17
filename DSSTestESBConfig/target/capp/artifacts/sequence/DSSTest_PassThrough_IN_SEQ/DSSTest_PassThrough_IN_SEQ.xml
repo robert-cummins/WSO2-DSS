@@ -12,24 +12,10 @@
         <with-param name="sequence_name" value="DSSTest_PassThrough_IN_SEQ"/>
     </call-template>
     <property action="remove" name="Accept" scope="transport"/>
-    <property name="ContentType" value="text/xml" scope="axis2"/>
+    <property name="ContentType" value="application/xml" scope="axis2"/>
     <switch source="$ctx:OPERATION_NAME">
         <case regex="getPeople">
-            <payloadFactory media-type="xml">
-				<format>
-					<dat:personDetails xmlns:dat="http://ws.wso2.org/dataservice">
-						<dat:Name>$1</dat:Name>
-						<dat:Age>$2</dat:Age>
-						<dat:Nationality>$3</dat:Nationality>
-					</dat:personDetails>
-				</format>
-				<args>
-					<arg evaluator="xml" expression="$ctx:Name"/>
-					<arg evaluator="xml" expression="$ctx:Age"/>
-					<arg evaluator="xml" expression="$ctx:Nationality"/>
-				</args>
-			</payloadFactory>
-
+            <header name="Action" scope="default" value="urn:getPeople"/>
             <send>
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>
