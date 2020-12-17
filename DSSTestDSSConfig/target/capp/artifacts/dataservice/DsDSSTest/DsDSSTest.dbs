@@ -42,7 +42,7 @@
         <call-query href="dsGetPeople"/>
     </operation>
 
-    <operation name="getPeoplePersonByID">
+    <operation name="getPersonByID">
         <call-query href="dsGetPersonByID"/>
     </operation>
 
