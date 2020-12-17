@@ -4,6 +4,7 @@
     <config id="DsDSSTest">
         <property name="carbon_datasource_name">TEST_DATABASE</property>
     </config>
+    
     <query id="dsGetPeople" useConfig="DsDSSTest">
         <sql>
             SELECT * FROM test_database.people
@@ -15,7 +16,22 @@
         </result>
     </query>
 
+    <query id="dsGetCars" useConfig="DsDSSTest">
+        <sql>
+            SELECT * FROM test_database.Cars
+        </sql>
+        <result element="getPeopleResponse" rowName="personDetails">
+            <element column="Make" name="Make" xsdType="string"/>
+            <element column="Model" name="Model" xsdType="string"/>
+            <element column="Person_id" name="Person_id" xsdType="int"/>
+        </result>
+    </query>
+
     <operation name="getPeople">
         <call-query href="dsGetPeople"/>
+    </operation>
+
+    <operation name="getCars">
+        <call-query href="dsGetCars"/>
     </operation>
 </data>
