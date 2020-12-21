@@ -34,6 +34,23 @@
 		</faultSequence>
     </resource>
 
+    <resource methods="GET" uri-template="/people/cars/{id}">
+        <inSequence>
+            <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
+            <property name="OPERATION_NAME" type="STRING" value="getPersonCars" scope="default"/>
+            <sequence key="DSSTest_THROTTLE_SEQ"/>
+            <sequence key="DSSTest_PassThrough_IN_SEQ"/>
+        </inSequence>
+
+        <outSequence>
+			<sequence key="DSSTest_PassThrough_OUT_SEQ"/>
+		</outSequence>
+
+        <faultSequence>
+			<sequence key="DSSTest_Generic_FAULT_SEQ"/>
+		</faultSequence>
+    </resource>
+
     <resource methods="GET" uri-template="/people/{id}">
         <inSequence>
             <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
