@@ -20,7 +20,7 @@
         <sql>
             SELECT * FROM test_database.Cars
         </sql>
-        <result element="getPeopleResponse" rowName="personDetails">
+        <result element="getPeopleResponse" rowName="carDetails">
             <element column="Make" name="Make" xsdType="string"/>
             <element column="Model" name="Model" xsdType="string"/>
             <element column="Person_id" name="Person_id" xsdType="int"/>
@@ -39,6 +39,17 @@
         <param name="id" ordinal="1" sqlType="INTEGER"/>
     </query>
 
+    <query id="dsGetPeoplesCars" useConfig="DsDSSTest">
+        <sql>
+            SELECT people.Name, Cars.Make, Cars.Model  FROM test_database.people INNER JOIN test_database.Cars WHERE idpeople = Person_id
+        </sql>
+        <result element="getPeoplesCarsResponse" rowName="personCarDetails">
+            <element column="Name" name="Name" xsdType="string"/>
+            <element column="Make" name="Make" xsdType="string"/>
+            <element column="Model" name="Model" xsdType="string"/>
+        </result>
+    </query>
+
     <operation name="getPeople">
         <call-query href="dsGetPeople"/>
     </operation>
@@ -51,5 +62,9 @@
         <call-query href="dsGetPersonByID">
             <with-param name="id" query-param="id" />
         </call-query>
+    </operation>
+
+    <operation name="getPeoplesCars">
+        <call-query href="dsGetPeoplesCars"/>
     </operation>
 </data>

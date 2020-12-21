@@ -47,5 +47,12 @@
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>
         </case>
+
+        <case regex="getPeoplesCars">
+            <header name="Action" scope="default" value="urn:getPeoplesCars"/>
+            <send>
+                <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
+            </send>
+        </case>
     </switch>
 </sequence>

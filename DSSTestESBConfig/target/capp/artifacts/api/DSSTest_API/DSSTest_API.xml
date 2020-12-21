@@ -17,6 +17,23 @@
 		</faultSequence>
     </resource>
 
+    <resource methods="GET" uri-template="/people/cars">
+        <inSequence>
+            <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
+            <property name="OPERATION_NAME" type="STRING" value="getPeoplesCars" scope="default"/>
+            <sequence key="DSSTest_THROTTLE_SEQ"/>
+            <sequence key="DSSTest_PassThrough_IN_SEQ"/>
+        </inSequence>
+
+        <outSequence>
+			<sequence key="DSSTest_PassThrough_OUT_SEQ"/>
+		</outSequence>
+
+        <faultSequence>
+			<sequence key="DSSTest_Generic_FAULT_SEQ"/>
+		</faultSequence>
+    </resource>
+
     <resource methods="GET" uri-template="/people/{id}">
         <inSequence>
             <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
@@ -34,7 +51,7 @@
 		</faultSequence>
     </resource>
 
-    <resource methods="GET" uri-template="/cars*">
+    <resource methods="GET" uri-template="/cars">
         <inSequence>
             <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
             <property name="OPERATION_NAME" type="STRING" value="getCars" scope="default"/>
@@ -50,4 +67,6 @@
 			<sequence key="DSSTest_Generic_FAULT_SEQ"/>
 		</faultSequence>
     </resource>
+
+    
 </api>
