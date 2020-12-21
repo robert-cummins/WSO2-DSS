@@ -31,9 +31,18 @@
 
         <case regex="getPersonByID">
             <header name="Action" scope="default" value="urn:getPersonByID"/>
-            <log level="full">
-                <property name="############################################ ID" expression="get-property('uri.var.id')"/>
-            </log>
+            <property name="identifyer" scope="default" expression="$ctx:uri.var.identifyer"/>
+            <payloadFactory media-type="xml">
+						<format>
+							<dat:getPersonByID xmlns:dat="http://ws.wso2.org/dataservice">
+								<dat:identifyer>$1</dat:identifyer>
+							</dat:getPersonByID>
+						</format>
+						<args>
+							<arg evaluator="xml" expression="$ctx:identifyer"/>
+						</args>
+					</payloadFactory>
+
             <send>
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>

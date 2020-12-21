@@ -29,24 +29,27 @@
 
     <query id="dsGetPersonByID" useConfig="DsDSSTest">
         <sql>
-            SELECT * FROM test_database.people WHERE idpeople=:id
+            SELECT * FROM test_database.people WHERE idpeople = ?
         </sql>
         <result element="getPersonResponse" rowName="personDetails">
             <element column="Name" name="Name" xsdType="string"/>
             <element column="Age" name="Age" xsdType="int"/>
             <element column="Nationality" name="Nationality" xsdType="string"/>
         </result>
+        <param name="identifyer" ordinal="1" sqlType="INTEGER"/>
     </query>
 
     <operation name="getPeople">
         <call-query href="dsGetPeople"/>
     </operation>
 
-    <operation name="getPersonByID">
-        <call-query href="dsGetPersonByID"/>
-    </operation>
-
     <operation name="getCars">
         <call-query href="dsGetCars"/>
+    </operation>
+
+    <operation name="getPersonByID">
+        <call-query href="dsGetPersonByID">
+            <with-param name="identifyer" query-param="identifyer" />
+        </call-query>
     </operation>
 </data>

@@ -17,7 +17,7 @@
 		</faultSequence>
     </resource>
 
-    <resource methods="GET" uri-template="/people/{id}">
+    <resource methods="GET" uri-template="/people/{identifyer}">
         <inSequence>
             <property name="TRANSACTION_ID" type="STRING" expression="get-property('MessageID')" scope="default"/>
             <property name="OPERATION_NAME" type="STRING" value="getPersonByID" scope="default"/>

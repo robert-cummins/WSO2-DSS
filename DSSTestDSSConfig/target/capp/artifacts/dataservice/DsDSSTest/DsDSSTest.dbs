@@ -29,7 +29,7 @@
 
     <query id="dsGetPersonByID" useConfig="DsDSSTest">
         <sql>
-            SELECT * FROM test_database.people WHERE idpeople=:id
+            SELECT * FROM test_database.people WHERE idpeople=:identifyer
         </sql>
         <result element="getPersonResponse" rowName="personDetails">
             <element column="Name" name="Name" xsdType="string"/>
