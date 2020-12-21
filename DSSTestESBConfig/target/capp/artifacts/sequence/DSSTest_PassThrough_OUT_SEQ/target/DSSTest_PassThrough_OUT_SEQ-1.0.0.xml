@@ -12,6 +12,21 @@
         <with-param name="sequence_name" value="DSSTest_PassThrough_OUT_SEQ"/>
     </call-template>
 
+    <switch source="$ctx:OPERATION_NAME">
+        <case regex="getPersonCars">
+            <payloadFactory media-type="json">
+                <format>
+                    {
+                        "test": "test return case"
+                    }
+                </format>
+                <args>
+                <arg evaluator="json" expression="$.traders.traderSummary"/>
+                </args>
+            </payloadFactory>
+        </case>
+    </switch>
+
     <header action="remove" name="assertion" scope="transport"/>
     <header action="remove" name="X-JWT-Assertion" scope="transport"/>
     <call-template description="Logging" target="conf:templates/sequences/shared/Logging.xml">
