@@ -31,15 +31,15 @@
 
         <case regex="getPersonByID">
             <header name="Action" scope="default" value="urn:getPersonByID"/>
-            <property name="identifyer" scope="default" expression="$ctx:uri.var.identifyer"/>
+            <property name="id" scope="default" expression="$ctx:uri.var.id"/>
             <payloadFactory media-type="xml">
 						<format>
 							<dat:getPersonByID xmlns:dat="http://ws.wso2.org/dataservice">
-								<dat:identifyer>$1</dat:identifyer>
+								<dat:id>$1</dat:id>
 							</dat:getPersonByID>
 						</format>
 						<args>
-							<arg evaluator="xml" expression="$ctx:identifyer"/>
+							<arg evaluator="xml" expression="$ctx:id"/>
 						</args>
 					</payloadFactory>
 
