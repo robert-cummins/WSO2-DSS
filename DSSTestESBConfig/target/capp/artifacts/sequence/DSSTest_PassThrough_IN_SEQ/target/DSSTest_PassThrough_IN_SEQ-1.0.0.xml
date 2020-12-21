@@ -54,5 +54,24 @@
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>
         </case>
+
+        <case regex="getPersonCars">
+            <header name="Action" scope="default" value="urn:getPersonCars"/>
+            <property name="id" scope="default" expression="$ctx:uri.var.id"/>
+            <payloadFactory media-type="xml">
+						<format>
+							<dat:getPersonCars xmlns:dat="http://ws.wso2.org/dataservice">
+								<dat:id>$1</dat:id>
+							</dat:getPersonCars>
+						</format>
+						<args>
+							<arg evaluator="xml" expression="$ctx:id"/>
+						</args>
+					</payloadFactory>
+
+            <send>
+                <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
+            </send>
+        </case>
     </switch>
 </sequence>
