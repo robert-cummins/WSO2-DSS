@@ -73,5 +73,27 @@
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
             </send>
         </case>
+
+        <case regex="newPerson">
+            <!-- <header name="Action" scope="default" value="urn:newPerson"/> -->
+            <log level="full">
+                <property name="#################################### BODY #########################" expression="json-eval($.)"></property>
+            </log>
+            
+            <!-- <payloadFactory media-type="xml">
+				<format>
+					<dat:newPerson xmlns:dat="http://ws.wso2.org/dataservice">
+						<dat:id>$1</dat:id>
+					</dat:newPerson>
+				</format>
+				<args>
+					<arg evaluator="xml" expression="hello"/>
+				</args>
+			</payloadFactory> -->
+
+            <!--<send>
+                <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
+            </send> -->
+        </case>
     </switch>
 </sequence>
