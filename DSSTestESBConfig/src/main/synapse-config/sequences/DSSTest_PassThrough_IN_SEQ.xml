@@ -79,9 +79,6 @@
             <property name="name" scope="default" expression="json-eval($.name)"/>
             <property name="age" scope="default" expression="json-eval($.age)"/>
             <property name="nationality" scope="default" expression="json-eval($.nationality)"/>
-            <log level="full">
-                <property name="#################################### BODY #########################" expression="json-eval($.)"></property>
-            </log>
             
             <payloadFactory media-type="xml">
 				<format>

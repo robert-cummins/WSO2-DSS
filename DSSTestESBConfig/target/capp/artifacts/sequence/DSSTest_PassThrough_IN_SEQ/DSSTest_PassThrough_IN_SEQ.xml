@@ -75,25 +75,32 @@
         </case>
 
         <case regex="newPerson">
-            <!-- <header name="Action" scope="default" value="urn:newPerson"/> -->
+            <header name="Action" scope="default" value="urn:newPerson"/>
+            <property name="name" scope="default" expression="json-eval($.name)"/>
+            <property name="age" scope="default" expression="json-eval($.age)"/>
+            <property name="nationality" scope="default" expression="json-eval($.nationality)"/>
             <log level="full">
                 <property name="#################################### BODY #########################" expression="json-eval($.)"></property>
             </log>
             
-            <!-- <payloadFactory media-type="xml">
+            <payloadFactory media-type="xml">
 				<format>
 					<dat:newPerson xmlns:dat="http://ws.wso2.org/dataservice">
-						<dat:id>$1</dat:id>
+						<dat:name>$1</dat:name>
+						<dat:age>$2</dat:age>
+						<dat:nationality>$3</dat:nationality>
 					</dat:newPerson>
 				</format>
 				<args>
-					<arg evaluator="xml" expression="hello"/>
+					<arg evaluator="xml" expression="$ctx:name"/>
+					<arg evaluator="xml" expression="$ctx:age"/>
+					<arg evaluator="xml" expression="$ctx:nationality"/>
 				</args>
-			</payloadFactory> -->
+			</payloadFactory> 
 
-            <!--<send>
+            <send>
                 <endpoint key="conf:/endpoints/DSSTest/DSSTest_Test_EP.xml"/>
-            </send> -->
+            </send> 
         </case>
     </switch>
 </sequence>
