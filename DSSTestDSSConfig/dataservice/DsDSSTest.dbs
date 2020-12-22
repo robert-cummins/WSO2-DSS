@@ -65,11 +65,12 @@
 
     <query id="dsNewPerson" useConfig="DsDSSTest">
         <sql>
-            INSERT INTO test_database.people (Name, Age, Nationality) VALUES (?, ?, ?)
+            INSERT INTO test_database.people (idpeople, Name, Age, Nationality) VALUES (?, ?, ?, ?)
         </sql>
-        <param name="name" ordinal="1" sqlType="STRING"/>
-        <param name="age" ordinal="2" sqlType="INTEGER"/>
-        <param name="nationality" ordinal="3" sqlType="STRING"/>
+        <param name="id" ordinal="1" sqlType="INTEGER"/>
+        <param name="name" ordinal="2" sqlType="STRING"/>
+        <param name="age" ordinal="3" sqlType="INTEGER"/>
+        <param name="nationality" ordinal="4" sqlType="STRING"/>
     </query>
 
     <operation name="getPeople">
@@ -98,6 +99,7 @@
 
     <operation name="newPerson">
         <call-query href="dsNewPerson">
+            <with-param name="id" query-param="id" />
             <with-param name="name" query-param="name" />
             <with-param name="age" query-param="age" />
             <with-param name="nationality" query-param="nationality" />
